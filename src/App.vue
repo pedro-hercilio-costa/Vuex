@@ -1,28 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ToDoForm @criarLembretes="criarLembrete($event)"/>
+    <ToDoList :vetorLembretes="lembretes"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import ToDoForm from "./components/ToDoForm.vue"
+import ToDoList from "./components/ToDoList.vue"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ToDoForm, ToDoList
+  }, data: function () {
+    return {
+      lembretes: []
+    }
+  }, methods: {
+    criarLembrete: function (event) {
+      this.lembretes.push(event.titulo)      
+      }
   }
 }
 </script>
 
-<style>
+<style> 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+    flex-wrap: wrap;
+    
+    align-items: center;
 }
 </style>
