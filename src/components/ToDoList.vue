@@ -9,7 +9,11 @@
 <script>
 export default {
     name: "ToDoList",
-    props: ['vetorLembretes']
+    computed: { 
+        vetorLembretes(){
+            return this.$store.state.lembretes
+        }
+    }
     }
 </script>
 

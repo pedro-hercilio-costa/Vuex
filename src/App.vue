@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <ToDoForm @criarLembretes="criarLembrete($event)"/>
-    <ToDoList :vetorLembretes="lembretes"/>
+    <ToDoList/>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
     ToDoForm, ToDoList
   }, data: function () {
     return {
-      lembretes: []
+      
     }
   }, methods: {
     criarLembrete: function (event) {

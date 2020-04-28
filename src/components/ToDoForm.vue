@@ -16,7 +16,7 @@ export default {
         }
     }, methods: {
         criarLembrete: function () {
-            this.$emit('criarLembretes', {
+            this.$store.commit('criarLembretes', {
                 titulo: this.titulo                
             })            
             this.titulo = '';                      
